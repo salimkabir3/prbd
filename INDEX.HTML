@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.names{
+    font-size:1.5rem;
+    margin-bottom:20px;
+    font-weight:bold;
+}
+
+.message{
+    max-width:700px;
+    line-height:1.8;
+    font-size:1.1rem;
+}
+
+.photo{
+    margin:40px 0;
+}
+
+.photo img{
+    width:280px;
+    height:280px;
+    object-fit:cover;
+    border-radius:20px;
+    border:5px solid white;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.countdown{
+    margin-top:30px;
+    font-size:1.3rem;
+}
+
+.love-note{
+    background:rgba(255,255,255,.15);
+    margin:40px auto;
+    padding:25px;
+    width:90%;
+    max-width:700px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+footer{
+    padding:30px;
+    font-size:14px;
+}
+
+.heart{
+    position:fixed;
+    color:white;
+    animation:float 8s linear infinite;
+    opacity:.7;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+<h1>🎂 Happy Birthday My Love ❤️</h1>
+
+<div class="names">
+S & H Forever ♾️
+</div>
+
+<p class="message">
+Today is all about celebrating the most amazing person in my life.
+Thank you for your love, your kindness, your support, and every beautiful moment we've shared together.
+You make my world brighter every single day and I am grateful to have you.
+May this new year bring you happiness, success, good health, and everything your heart desires.
+I love you more than words can express. ❤️
+</p>
+
+<div class="photo">
+<img src="your-photo.jpg" alt="Our Photo">
+</div>
+
+<div class="countdown">
+🎉 Birthday Countdown:
+<div id="timer"></div>
+</div>
+
+<div class="love-note">
+<h2>💌 A Letter To You</h2>
+<br>
+<p>
+From the day you came into my life, everything became more beautiful.
+You are my safe place, my happiness, and my favorite person.
+No matter where life takes us, I promise to keep loving you,
+supporting you, and choosing you every single day.
+Happy Birthday, my sweetheart. ❤️
+</p>
+</div>
+
+</div>
+
+<footer>
+Made with ❤️ by S for H
+</footer>
+
+<script>
+
+// Set birthday date here
+const birthday = new Date("July 15, 2026 00:00:00").getTime();
+
+setInterval(() => {
+const now = new Date().getTime();
+const distance = birthday - now;
+
+if(distance < 0){
+document.getElementById("timer").innerHTML =
+"🎉 Happy Birthday My Love! 🎂";
+return;
+}
+
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("timer").innerHTML =
+`${days}d ${hours}h ${minutes}m ${seconds}s`;
+},1000);
+
+
+// Floating hearts
+function createHeart(){
+const heart = document.createElement('div');
+heart.classList.add('heart');
+heart.innerHTML='❤️';
+heart.style.left=Math.random()*100+'vw';
+heart.style.fontSize=(Math.random()*20+15)+'px';
+heart.style.animationDuration=(Math.random()*5+5)+'s';
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
